@@ -5,7 +5,7 @@
   @if (!loading) {
     <div class="row">
       @for (item of filteredItems(); track item) {
-        <div class="col-md-3 col-sm-12" routerLink="/details/{{item.id}}">
+        <div class="col-md-3 col-sm-12">
           <app-product [item]="item" (itemData)="addToCart($event)"/>
         </div>
         }

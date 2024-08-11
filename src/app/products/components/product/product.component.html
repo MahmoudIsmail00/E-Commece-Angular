@@ -1,8 +1,10 @@
   <div class="item">
-    <img src="{{item.image}}" alt="">
-    <div class="body">
-      <h4>{{item.title}}</h4>
-      <p>{{item.description}}</p>
+    <div routerLink="/details/{{item.id}}">
+      <img src="{{item.image}}" alt="">
+      <div class="body">
+        <h4>{{item.title}}</h4>
+        <p>{{item.description}}</p>
+      </div>
     </div>
     <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
       <button class="btn btn-success" *ngIf="!addflag" (click)="addflag = true" >Add To Cart</button>
