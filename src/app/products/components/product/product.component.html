@@ -10,7 +10,7 @@
       <button class="btn btn-success" *ngIf="!addflag" (click)="addflag = true" >Add To Cart</button>
       <div class="d-flex w-50" *ngIf="addflag" >
         <input type="number" class="form-control" [(ngModel)]="amount">
-        <button class="btn btn-danger" (click)="sendCart()">Add</button>
+        <button class="btn btn-danger" (click)="sendCart()" (click)="addflag = false">Add</button>
       </div>
       <span>{{item.price}} L.E</span>
     </div>
