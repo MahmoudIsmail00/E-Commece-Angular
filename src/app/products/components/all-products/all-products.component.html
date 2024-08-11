@@ -1,0 +1,19 @@
+<div class="box mt-5">
+  <div class="my-2 w-25">
+    <app-select [data]="categories" [title]="'Categories'"  (selectedCategoy)="filterCategory($event)"/>
+  </div>
+  @if (!loading) {
+    <div class="row">
+      @for (item of filteredItems(); track item) {
+        <div class="col-md-3 col-sm-12" routerLink="/details/{{item.id}}">
+          <app-product [item]="item" (itemData)="addToCart($event)"/>
+        </div>
+        }
+    </div>
+  }
+  @if(loading){
+    <div class="text-center w-100">
+      <app-spinner/>
+    </div>
+  }
+</div>

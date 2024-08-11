@@ -1,0 +1,7 @@
+<label for="" class="my-1">{{title}} </label>
+<select (change)="detectChanges($event)" class="form-control">
+   <option value="">All Categories</option>
+   @for (cat of data; track $index) {
+      <option value="{{cat}}">{{cat}}</option>
+    }
+</select>
