@@ -1,4 +1,7 @@
-<div class="bg-gray-100 h-screen py-8">
+<div class="alert alert-success w-75 text-center" role="alert" style="margin: 0 auto;"  *ngIf="success">
+  <strong>Well done!</strong> Your order is successfully Sent!
+</div>
+<div class="bg-gray-100 h-screen py-8" *ngIf="!loading">
   <div class="container mx-auto px-4">
       <h1 class="text-2xl font-semibold mb-4 text-danger">Shopping Cart</h1>
       <p class="text-2xl font-light mb-4">you have {{cartProducts.length}} items in this cart</p>
@@ -62,12 +65,13 @@
                       <span class="font-semibold">Total</span>
                       <span class="font-semibold">{{Math.round(total)}} L.E</span>
                   </div>
-                  <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
+                  <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full" (click)="postCart()" >Checkout</button>
               </div>
           </div>
       </div>
   </div>
+
 </div>
-<div class="text-center w-100">
+<div class="text-center w-100" *ngIf="loading">
   <app-spinner/>
 </div>

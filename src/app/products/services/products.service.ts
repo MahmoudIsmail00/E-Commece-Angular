@@ -26,3 +26,5 @@ export class ProductsService {
     return this._httpClient.get(environment.baseApi + 'products/category/' + category);
   }
 }
+
+// return this._httpClient.get(environment.baseApi + 'products/?id=' + id)

@@ -5,6 +5,7 @@ import { SpinnerComponent } from "../../../shared/components/spinner/spinner.com
 import { SelectComponent } from "../../../shared/components/select/select.component";
 import { ProductComponent } from '../product/product.component';
 import { RouterLink } from '@angular/router';
+import { Product } from '../../models/Product';
 
 @Component({
   selector: 'app-all-products',
@@ -15,8 +16,8 @@ import { RouterLink } from '@angular/router';
 })
 export class AllProductsComponent implements OnInit {
 
-  products:any[] = [];
-  categories:any[] = [];
+  products:Product[] = [];
+  categories:string[] = [];
   selectedCategory:string = '';
   loading:boolean = false;
 
@@ -52,6 +53,7 @@ export class AllProductsComponent implements OnInit {
       }
     })
   }
+      //next: (data:any)=>{this.categories = data.map((item:any)=>{return item.name}) ; this.loading = false;},
 
   filteredItems(): any[] {
     this.loading = true;

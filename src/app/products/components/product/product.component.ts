@@ -2,17 +2,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { Product } from '../../models/Product';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [NgIf, FormsModule,RouterLink],
+  imports: [NgIf,FormsModule,RouterLink],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'
 })
 export class ProductComponent implements OnInit{
 
-  @Input() item:any;
+  @Input() item!:Product;
 
   @Output() itemData = new EventEmitter();
 
@@ -24,9 +25,7 @@ export class ProductComponent implements OnInit{
   ngOnInit(): void {
 
   }
-
   sendCart(){
     this.itemData.emit({item:this.item, quantity:this.amount});
   }
-
 }

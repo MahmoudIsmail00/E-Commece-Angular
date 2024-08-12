@@ -1,5 +1,5 @@
-<div class="box mt-5">
-  <div class="my-2 w-25">
+<div class="box mt-5 bg-gray-100" >
+  <div class="my-5 w-50 text-center m-auto">
     <app-select [data]="categories" [title]="'Categories'"  (selectedCategoy)="filterCategory($event)"/>
   </div>
   @if (!loading) {

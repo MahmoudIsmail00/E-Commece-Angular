@@ -39,3 +39,10 @@ export class ProductsDetailsComponent implements OnInit{
     });
   }
 }
+/*
+et item = data as Array<any>;
+        this.product = item[0];
+        console.log(this.product);
+        this.loading = false;
+
+*/
