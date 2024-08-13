@@ -26,6 +26,9 @@ export class ProductComponent implements OnInit{
 
   }
   sendCart(){
+    if(this.amount < 0){
+      this.amount = 0
+    }
     this.itemData.emit({item:this.item, quantity:this.amount});
   }
 }

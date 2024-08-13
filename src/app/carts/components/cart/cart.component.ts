@@ -20,6 +20,8 @@ export class CartComponent implements OnInit {
   success:boolean = false;
   loading:boolean = false;
 
+  currUser:any;
+
   constructor(private _CartsService:CartsService, private _router:Router){}
 
   ngOnInit(): void {
@@ -43,6 +45,10 @@ export class CartComponent implements OnInit {
   }
 
   updateQuantity(){
+    for(let item of this.cartProducts){
+      if(item.quantity < 0)
+        item.quantity = 0
+    }
     localStorage.setItem("cart",JSON.stringify(this.cartProducts));
   }
 
@@ -78,17 +84,22 @@ export class CartComponent implements OnInit {
     let productsById = this.cartProducts.map((item)=>{
      return {productId:item.item.id, quantity: item.quantity}
     })
-    let Model = {
-      userId: 5,
-      date: new Date(),
-      products:productsById
+    this.currUser =  JSON.parse(localStorage.getItem("currentUser")!);
+    if(this.currUser != null ){
+      let Model = {
+        userId: this.currUser.id,
+        date: new Date(),
+        products:productsById
+      }
+      this._CartsService.createNewCart(Model).subscribe({
+        next: (res) => {this.success = true}
+      })
+      console.log(Model);
+      setTimeout(() => {
+        this._router.navigate(['/products']);
+      }, 2000);
+    }else{
+      alert('you must log in');
     }
-    this._CartsService.createNewCart(Model).subscribe({
-      next: (res) => {this.success = true}
-    })
-    console.log(Model);
-    setTimeout(() => {
-      this._router.navigate(['/products']);
-    }, 2000);
   }
 }
