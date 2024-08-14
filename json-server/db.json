@@ -242,38 +242,9 @@
     }
   ],
   "carts": [
-    {
-      "id": "86a2",
-      "userId": "1",
-      "date": "2024-08-14T17:16:18.127Z",
-      "products": [
-        {
-          "productId": 1,
-          "quantity": 5
-        },
-        {
-          "productId": 5,
-          "quantity": 7
-        }
-      ]
-    }
+
   ],
   "users": [
-    {
-      "id": "1",
-      "name": "Mahmoud",
-      "email": "z39nncn@tmpmailtor.com",
-      "password": "123123",
-      "confirmPassword": "123123",
-      "phone": "0126558887"
-    },
-    {
-      "id": "2",
-      "name": "Abdallah",
-      "email": "sddjh8jw51@mxscout.com",
-      "password": "123123",
-      "confirmPassword": "123123",
-      "phone": "01269553612"
-    }
+
   ]
 }
