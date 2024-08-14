@@ -12,10 +12,10 @@
                     <table class="w-full">
                         <thead>
                             <tr>
-                                <th class="text-left font-semibold">Product</th>
-                                <th class="text-left font-semibold">Price</th>
-                                <th class="text-left font-semibold">Quantity</th>
-                                <th class="text-left font-semibold">Total</th>
+                                <th class="text-left font-semibold text-center">Product</th>
+                                <th class="text-left font-semibold text-center">Price</th>
+                                <th class="text-left font-semibold text-center">Quantity</th>
+                                <th class="text-left font-semibold text-center">Total</th>
                                 <th  class="text-left font-semibold">
                                   <button class="btn btn-outline-danger" (click)="clearCart()">Clear Cart</button>
                                 </th>
@@ -26,18 +26,18 @@
                                 <td class="py-4">
                                     <div class="flex items-center">
                                         <img class="h-16 w-16 mr-4" [src]="item.item.image" alt="Product image">
-                                        <span class="font-semibold">{{item.item.title}}</span>
+                                        <span class="font-semibold ">{{item.item.title}}</span>
                                     </div>
                                 </td>
                                 <td class="py-4">{{item.item.price}}</td>
                                 <td class="py-4">
                                     <div class="flex items-center">
                                         <button class="border rounded-md py-2 px-4 mr-2 btn btn-info" (click)="minsAmount(index)">-</button>
-                                        <input class="text-center w-20" type="number" (change)="updateQuantity()" [(ngModel)]="item.quantity" />
+                                        <input class="text-center w-10" type="number" (change)="updateQuantity()" [(ngModel)]="item.quantity" />
                                         <button class="border rounded-md py-2 px-4 ml-2 btn btn-success" (click)="plusAmount(index)">+</button>
                                     </div>
                                 </td>
-                                <td class="py-4">{{Math.round(item.item.price * item.quantity)}} L.E</td>
+                                <td class="py-4 w-25 text-center">{{Math.round(item.item.price * item.quantity)}} L.E</td>
                                 <td class="py-4">
                                   <button class="btn btn-danger" (click)="deleteProduct(index)">Delete</button>
                                 </td>

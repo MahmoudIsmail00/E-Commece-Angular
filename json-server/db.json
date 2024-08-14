@@ -243,40 +243,17 @@
   ],
   "carts": [
     {
-      "id": "3cbb",
+      "id": "86a2",
       "userId": "1",
-      "date": "2024-08-13T20:58:49.466Z",
+      "date": "2024-08-14T17:16:18.127Z",
       "products": [
         {
           "productId": 1,
-          "quantity": 3
-        },
-        {
-          "productId": 2,
-          "quantity": 4
-        },
-        {
-          "productId": 3,
           "quantity": 5
-        }
-      ]
-    },
-    {
-      "id": "6485",
-      "userId": "1",
-      "date": "2024-08-13T21:08:08.017Z",
-      "products": [
-        {
-          "productId": 1,
-          "quantity": 3
         },
         {
-          "productId": 2,
-          "quantity": 4
-        },
-        {
-          "productId": 3,
-          "quantity": 5
+          "productId": 5,
+          "quantity": 7
         }
       ]
     }

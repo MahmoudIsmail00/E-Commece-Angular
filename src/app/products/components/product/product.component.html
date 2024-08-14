@@ -1,9 +1,9 @@
-<div class="container">
+<!-- <div class="container">
   <div class="item">
-    <div routerLink="/details/{{item.id}}">
+    <div >
       <img src="{{item.image}}" alt="">
       <div class="body">
-        <h4>{{item.title}}</h4>
+        <h4></h4>
         <p>{{item.description}}</p>
       </div>
     </div>
@@ -15,5 +15,26 @@
       </div>
       <span>{{item.price}} L.E</span>
     </div>
+  </div>
+</div> -->
+
+<div class="bg-white rounded-lg shadow-lg p-8">
+  <div class="relative overflow-hidden" (mouseover)="showView = true" (mouseout)="showView = false">
+      <img class="object-cover w-full h-full" src="{{item.image}}" alt="Product">
+      <div class="absolute inset-0"  [ngClass]="{'bg-black opacity-40':showView == true}"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <button class="bg-white text-gray-900 py-2 px-6 rounded-full font-bold " *ngIf="showView" routerLink="/details/{{item.id}}">View Product</button>
+      </div>
+
+  </div>
+  <h3 class="text-xl font-bold text-gray-900 mt-4">{{item.title}}</h3>
+  <p class="text-gray-500 text-sm mt-2">{{item.description}}</p>
+  <div class="flex items-center justify-between mt-4">
+      <span class="text-gray-900 font-bold text-lg">{{item.price}} L.E</span>
+      <button class="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800" *ngIf="!addflag" (click)="addflag = true" >Add to Cart</button>
+      <div class="d-flex w-50" *ngIf="addflag" >
+        <input type="number" class="form-control" [(ngModel)]="amount">
+        <button class="btn btn-danger" (click)="sendCart()" (click)="addflag = false">Add</button>
+      </div>
   </div>
 </div>

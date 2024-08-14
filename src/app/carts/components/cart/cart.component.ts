@@ -94,9 +94,11 @@ export class CartComponent implements OnInit {
       this._CartsService.createNewCart(Model).subscribe({
         next: (res) => {this.success = true}
       })
-      console.log(Model);
+      alert('Thanks for purchasing form us!')
       setTimeout(() => {
+        this.cartProducts = [];
         this._router.navigate(['/products']);
+        localStorage.setItem("cart",JSON.stringify(this.cartProducts));
       }, 2000);
     }else{
       alert('you must log in');
