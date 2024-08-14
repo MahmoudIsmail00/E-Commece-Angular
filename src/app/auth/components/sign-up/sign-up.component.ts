@@ -86,7 +86,7 @@ export class SignUpComponent implements OnInit{
             this.done = true;
           }, 1000);
           setTimeout(() => {
-            this._router.navigate(['/products']);
+            this._router.navigate(['/login']);
           }, 3000);
         }
 
